@@ -7,7 +7,7 @@ import '../widgte/custom_text.dart';
 import 'login_controller.dart';
 
 class LoginView extends StatelessWidget {
-  Widget imageBG ;
+  DecorationImage imageBG ;
   Widget logo;
 
   LoginView({
@@ -52,16 +52,13 @@ class LoginView extends StatelessWidget {
                       bottomLeft: Radius.circular(20),
                     ),
                     //image background
-                    image: imageBG
+                    image: imageBG,
                   ),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Image.asset(
-                          logo,
-                          height: 300,
-                        ),
+                        logo,
                         const SizedBox(
                           height: 20,
                         ),
