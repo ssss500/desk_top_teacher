@@ -9,17 +9,20 @@ import 'login_controller.dart';
 class LoginView extends StatelessWidget {
   DecorationImage imageBG ;
   Widget logo;
+  String teacherId;
 
   LoginView({
     super.key,
     required this.imageBG,
     required this.logo  ,
+    required this.teacherId,
   });
 
   final LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
+    controller.teacherId = teacherId;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     // windows ui

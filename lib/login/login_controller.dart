@@ -15,16 +15,24 @@ import '../video/video_view.dart';
 class LoginController extends GetxController {
   final myVersion = "1.0.0";
   QrModel qrModel = QrModel();
+  String teacherId = '';
+
+
 
   @override
   void onInit() {
-    Firestore.initialize("al-atroush");
 
     // TODO: implement onInit
     super.onInit();
-    createNewQr();
-    
+
     // checkVersion();
+  }
+  @override
+  void onReady() {
+    Firestore.initialize(teacherId);
+
+    checkVersion();
+    super.onReady();
   }
 
   checkVersion() async {
