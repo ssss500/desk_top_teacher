@@ -18,6 +18,8 @@ class LoginController extends GetxController {
 
   @override
   void onInit() {
+    Firestore.initialize("al-atroush");
+
     // TODO: implement onInit
     super.onInit();
     checkVersion();
