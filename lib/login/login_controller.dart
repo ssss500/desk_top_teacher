@@ -29,7 +29,7 @@ class LoginController extends GetxController {
   }
   @override
   void onReady() {
-    Firestore.initialize(teacherId);
+    // Firestore.initialize(teacherId);
 
     checkVersion();
     super.onReady();
