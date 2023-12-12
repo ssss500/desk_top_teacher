@@ -43,7 +43,7 @@ class VideoView extends StatelessWidget {
                           child: IconButton(
                             onPressed: () {
                               // controller.loginController.createNewQr();
-                              Get.offAll(LoginView());
+                              Get.back();
                               LoginController loginController =
                                   Get.put(LoginController());
                               loginController.createNewQr();

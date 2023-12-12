@@ -7,7 +7,14 @@ import '../widgte/custom_text.dart';
 import 'login_controller.dart';
 
 class LoginView extends StatelessWidget {
-  LoginView({super.key});
+  String imageBG = "";
+  String logo = "";
+
+  LoginView({
+    super.key,
+    required this.imageBG,
+    required this.logo  ,
+  });
 
   final LoginController controller = Get.put(LoginController());
 
@@ -45,8 +52,8 @@ class LoginView extends StatelessWidget {
                       bottomLeft: Radius.circular(20),
                     ),
                     //image background
-                    image: const DecorationImage(
-                      image: AssetImage("assets/images/BG.jpg"),
+                    image:   DecorationImage(
+                      image: AssetImage(imageBG),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -55,7 +62,7 @@ class LoginView extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Image.asset(
-                          "assets/images/logo.png",
+                          logo,
                           height: 300,
                         ),
                         const SizedBox(
@@ -103,45 +110,44 @@ class LoginView extends StatelessWidget {
                     //qr code
                     Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: [GetBuilder<LoginController>(
-                      builder: (controller) {
-                        return Column(
-                          children: [
-                            if (controller.qrModel.id == "")
-                              const CircularProgressIndicator()
-                            else
-                              QrImageView(
-                                data: controller.qrModel.id.toString(),
-                                version: QrVersions.auto,
-                                size: 300.0,
-                              ),
-                              // SizedBox(
-                              //   height: 300,
-                              //   width: 300,
-                              //   child: PrettyQrView.data(
-                              //     data: controller.qrModel.id.toString(),
-                              //
-                              //     decoration: const PrettyQrDecoration(
-                              //       image: PrettyQrDecorationImage(
-                              //         image: AssetImage('assets/images/logo.png'),
-                              //       ),
-                              //     ),
-                              //     // version: QrVersions.auto,
-                              //     // size: 300.0,
-                              //   ),
-                              // ),
-                            SizedBox(
-                              height: 20,
+                  children: [
+                    GetBuilder<LoginController>(builder: (controller) {
+                      return Column(
+                        children: [
+                          if (controller.qrModel.id == "")
+                            const CircularProgressIndicator()
+                          else
+                            QrImageView(
+                              data: controller.qrModel.id.toString(),
+                              version: QrVersions.auto,
+                              size: 300.0,
                             ),
-                            if(kDebugMode)
+                          // SizedBox(
+                          //   height: 300,
+                          //   width: 300,
+                          //   child: PrettyQrView.data(
+                          //     data: controller.qrModel.id.toString(),
+                          //
+                          //     decoration: const PrettyQrDecoration(
+                          //       image: PrettyQrDecorationImage(
+                          //         image: AssetImage('assets/images/logo.png'),
+                          //       ),
+                          //     ),
+                          //     // version: QrVersions.auto,
+                          //     // size: 300.0,
+                          //   ),
+                          // ),
+                          SizedBox(
+                            height: 20,
+                          ),
+                          if (kDebugMode)
                             CustomText(
                               controller.qrModel.id.toString(),
                               color: Colors.black,
                             ),
-                          ],
-                        );
-                      }
-                    )
+                        ],
+                      );
+                    })
                   ],
                 ),
               ),
