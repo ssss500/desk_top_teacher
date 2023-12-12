@@ -22,7 +22,9 @@ class LoginController extends GetxController {
 
     // TODO: implement onInit
     super.onInit();
-    checkVersion();
+    createNewQr();
+    
+    // checkVersion();
   }
 
   checkVersion() async {
