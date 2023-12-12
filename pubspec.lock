@@ -171,14 +171,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.2.0"
-  fvp:
-    dependency: "direct main"
-    description:
-      name: fvp
-      sha256: "127a5db80742eb01d9ef69ab5bc6f74916aea8d0462ed438cff8f5b0603d58ec"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.12.0"
   get:
     dependency: "direct main"
     description:
@@ -784,14 +776,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
-  video_player_platform_interface:
-    dependency: transitive
-    description:
-      name: video_player_platform_interface
-      sha256: be72301bf2c0150ab35a8c34d66e5a99de525f6de1e8d27c0672b836fe48f73a
-      url: "https://pub.dev"
-    source: hosted
-    version: "6.2.1"
   vm_service:
     dependency: transitive
     description:
