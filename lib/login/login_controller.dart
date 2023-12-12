@@ -22,6 +22,7 @@ class LoginController extends GetxController {
   @override
   void onInit() {
 
+    Firestore.initialize("al-atroush");
     // TODO: implement onInit
     super.onInit();
 
@@ -29,7 +30,6 @@ class LoginController extends GetxController {
   }
   @override
   void onReady() {
-    // Firestore.initialize(teacherId);
 
     checkVersion();
     super.onReady();
