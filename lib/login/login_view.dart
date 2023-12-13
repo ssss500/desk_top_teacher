@@ -7,22 +7,17 @@ import '../widgte/custom_text.dart';
 import 'login_controller.dart';
 
 class LoginView extends StatelessWidget {
-  DecorationImage imageBG ;
-  Widget logo;
-  String teacherId;
+
 
   LoginView({
     super.key,
-    required this.imageBG,
-    required this.logo  ,
-    required this.teacherId,
+
   });
 
   final LoginController controller = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
-    controller.teacherId = teacherId;
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     // windows ui
@@ -55,13 +50,19 @@ class LoginView extends StatelessWidget {
                       bottomLeft: Radius.circular(20),
                     ),
                     //image background
-                    image: imageBG,
+                    image:  const DecorationImage(
+                      image: AssetImage("assets/images/bg.jpg"),
+                      fit: BoxFit.cover,
+                    ),
                   ),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        logo,
+                      Image.asset(
+                      "assets/images/logo.png",
+                      height: 300,
+                    ),
                         const SizedBox(
                           height: 20,
                         ),
