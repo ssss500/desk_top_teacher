@@ -88,7 +88,7 @@ class LoginView extends StatelessWidget {
                         ),
                         space(),
                         CustomText(
-                          "4- عند فتح الكاميره قبل بعمل سكان للكود",
+                          "4- عند فتح الكاميره قم بعمل سكان للكود",
                           color: Colors.white,
                         ),
                         space(),
